@@ -4,9 +4,11 @@
 {% block title %}Create{% endblock title %}
 
 {% block content %}
+<body class="backg">
 <form action="{% url 'destination-create' %}" method="POST" enctype="multipart/form-data">
   {% csrf_token %}
-  {{form.as_p}}
-  <input type="submit" value="Create">
+  <h4 class="headd">{{form|crispy}}</h4>
+  <input class="btn btn-outline-success my-2 my-sm-0"  type="submit" value="Create">
 </form>
+</body>
 {% endblock content %}

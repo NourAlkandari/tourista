@@ -4,9 +4,11 @@
 {% block title %}Update{% endblock title %}
 
 {% block content %}
+<body class="backg">
 <form action="{% url 'destination-update' destination_obj.id %}" method="POST" enctype="multipart/form-data">
   {% csrf_token %}
-  {{form.as_p}}
-  <input type="submit" value="Update">
+  <h4 class="headd">{{form|crispy}}</h4>
+  <input class="btn btn-outline-light my-2 my-sm-0" type="submit" value="Update">
 </form>
+</body>
 {% endblock content %}
